@@ -1,0 +1,47 @@
+
+
+
+[tool.poetry]
+name = "demo"
+version = "0.1.0"
+description = ""
+authors = ["duarte-pompeu <duarte-pompeu@users.noreply.github.com>"]
+
+[tool.poetry.dependencies]
+python = "3.11.*"
+
+# https://github.com/Delgan/loguru/releases
+loguru = "0.6.0"
+# https://github.com/pydantic/pydantic/releases
+pydantic = "1.10.2"
+
+[tool.poetry.dev-dependencies]
+bandit = "1.7.4"
+black = "22.12.0"
+coverage = "6.5.0"
+isort = "5.11.2"
+mypy = "0.991"
+pytest = "7.2.0"
+python-dotenv = "0.21.0"
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.0.287"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.isort]
+profile = "black"
+
+[tool.ruff]
+select = [
+    "E",  # pycodestyle
+    "F",  # pyflakes
+    "B",  # bugbear: finds potential bugs
+    "UP", # pyupgrade: warns about deprecated features, eg typing
+    "S",  # flake8-bandit: security warnings
+]
+ignore = [
+    "E501", # line too long -> handled by formatter
+]
