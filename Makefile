@@ -26,7 +26,7 @@ install: ## install the project dependencies in a virtual environment
 
 .PHONY: run
 run: $(INSTALL_STAMP)  ## runs the python application
-	PYTHONPATH=. $(CMD) -- python demo/main.py
+	PYTHONPATH=. $(CMD) python demo/main.py
 
 .PHONY: clean
 clean: ## removes files generated during installation or compilation
@@ -37,9 +37,6 @@ clean: ## removes files generated during installation or compilation
 
 .PHONY: all
 all: format lint test cov ## formats, lints and tests
-
-.PHONY: tall ## checks types and all targets
-tall: type all
 
 .PHONY: format
 format: $(INSTALL_STAMP) ## Formats the code and sorts imports consistently
