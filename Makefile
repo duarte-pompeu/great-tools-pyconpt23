@@ -25,7 +25,7 @@ install: ## install the project dependencies in a virtual environment
 	touch $(INSTALL_STAMP)
 
 .PHONY: run
-run: $(INTALL_STAMP)  ## runs the python application
+run: $(INSTALL_STAMP)  ## runs the python application
 	PYTHONPATH=. $(CMD) -- python demo/main.py
 
 .PHONY: clean
