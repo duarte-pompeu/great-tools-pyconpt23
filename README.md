@@ -11,7 +11,7 @@ Run the following to configure `poetry`  and `pyenv`:
 
 ```bash
 pyenv install 3.11.4
-demo poetry config virtualenvs.in-project true
+poetry config virtualenvs.in-project true
 poetry env use ~/.pyenv/versions/3.11.4/bin/python
 make install
 ```
@@ -22,6 +22,14 @@ make install
 make run
 ```
 
+## Quality checks
+
+``` bash
+make format
+make lint
+make test
+# or just...
+make all
 --
 
 Based on [my-python-template](https://github.com/duarte-pompeu/my-python-template), created by [Duarte Pompeu](https://duartepompeu.com).
